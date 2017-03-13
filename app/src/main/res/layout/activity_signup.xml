@@ -1,0 +1,120 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    tools:context="com.techease.ntuapp.SignUpActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:id="@+id/logo"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/logo"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN UP"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_marginBottom="0dp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Name"
+            android:textColorHint="#FFF"
+            android:textSize="20sp"
+            android:backgroundTint="#FFF"
+            android:textColor="#FFF"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:id="@+id/etSignupName" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            android:backgroundTint="#FFF"
+            android:textColorHint="#FFF"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textColor="#FFF"
+            android:ems="10"
+            android:id="@+id/etSignupEmail" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:hint="Age"
+            android:textColor="#FFF"
+            android:textColorHint="#FFF"
+            android:backgroundTint="#FFF"
+            android:layout_gravity="center"
+            android:id="@+id/etSignupAge" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColorHint="#FFF"
+            android:textColor="#FFF"
+            android:hint="Password"
+            android:backgroundTint="#FFF"
+            android:id="@+id/etSignuppassword" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:id="@+id/ivSignUp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:src="@drawable/signup"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Already have an account ?"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        android:textStyle="bold"
+        android:id="@+id/tvlogin"
+        android:gravity="center"
+        android:textColor="#FFF"
+        android:layout_marginBottom="0dp"
+        />
+
+</LinearLayout>

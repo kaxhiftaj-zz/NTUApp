@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="50dp"
+    android:paddingRight="50dp"
+    android:background="@drawable/bg"
+    tools:context="com.techease.ntuapp.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:id="@+id/logo"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/logo"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN IN"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:layout_marginBottom="0dp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:hint="Name"
+            android:textColorHint="#FFF"
+            android:textSize="20sp"
+            android:backgroundTint="#FFF"
+            android:textColor="#FFF"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:id="@+id/etSignInEmail" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textColorHint="#FFF"
+            android:textColor="#FFF"
+            android:hint="Password"
+            android:backgroundTint="#FFF"
+            android:id="@+id/etSignInPassword" />
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:id="@+id/ivSignIn"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/signin"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

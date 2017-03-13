@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    app:layout_collapseParallaxMultiplier="1.0">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="1"
+        android:background="@color/rippelColor"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="68dp"
+                android:layout_height="75dp"
+                android:id="@+id/ivProfilePic"
+                android:src="@drawable/logo"
+                android:layout_marginLeft="4dp"
+                android:layout_alignParentBottom="true"
+                app:riv_corner_radius="30dip"
+                app:riv_mutate_background="true"
+                app:riv_tile_mode="repeat"
+                app:riv_oval="true"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kashif Taj"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:id="@+id/name"
+                    android:layout_marginLeft="70dp"
+                    android:gravity="center_vertical"
+                    />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="I am kashif"
+                    android:id="@+id/bio"
+                    android:layout_marginTop="30dp"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:maxLength="2000"
+                    android:maxLines="4"
+                    android:layout_alignLeft="@+id/name"
+                    android:layout_alignStart="@+id/name" />
+
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Subject : "
+                android:textStyle="bold"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Software company"
+                android:id="@+id/subject"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="top"
+                />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="39dp"
+            android:layout_gravity="top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply at : "
+                android:textStyle="bold"
+                android:layout_gravity="top"
+                android:layout_marginLeft="50dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="abc@abc.com"
+                android:id="@+id/apply"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="top"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

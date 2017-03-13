@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "979612572949",
+    "firebase_url": "https://ntuapp-20836.firebaseio.com",
+    "project_id": "ntuapp-20836",
+    "storage_bucket": "ntuapp-20836.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979612572949:android:ed1db36a33bbdc23",
+        "android_client_info": {
+          "package_name": "com.techease.ntuapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979612572949-j5hcmkvqllv63f7b9gk21uieamr0g590.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techease.ntuapp",
+            "certificate_hash": "b972efc764159ec03ec5982c635ffd44b80d9f2e"
+          }
+        },
+        {
+          "client_id": "979612572949-ccnrev1bvrmmni2b7po59aiqfo88687g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw891f9SaenTbqI1cFl9smPMVfVjXM8Ak"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979612572949-ccnrev1bvrmmni2b7po59aiqfo88687g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
