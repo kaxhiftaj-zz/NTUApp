@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home / About"
+            />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Event Map" />
+        <item
+            android:id="@+id/nav_employers"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Employers Attending" />
+        <item
+            android:id="@+id/nav_future_hub"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Future Hub" />
+        <item
+            android:id="@+id/nav_student_login"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Student SignUp" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Help" />
+    </group>
+
+
+
+</menu>

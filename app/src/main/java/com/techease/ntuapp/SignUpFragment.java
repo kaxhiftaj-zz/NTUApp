@@ -1,31 +1,28 @@
 package com.techease.ntuapp;
 
-
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
-import android.util.Log;
+import android.support.annotation.NonNull;
+import android.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-/**
- * A login screen that offers login via email/password.
- */
 
-public class SignUpActivity extends AppCompatActivity implements android.view.View.OnClickListener {
+public class SignUpFragment extends Fragment {
 
     EditText etSignupName, etSignupEmail, etSignupPassword, etSIgnupAge;
     TextView tvLogin ;
@@ -35,50 +32,37 @@ public class SignUpActivity extends AppCompatActivity implements android.view.Vi
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     boolean isLogin;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Firebase.setAndroidContext(this);
-        setContentView(R.layout.activity_signup);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v =  inflater.inflate(R.layout.fragment_sign_up, container, false);
+
+        Firebase.setAndroidContext(getActivity());
         mAuth = FirebaseAuth.getInstance();
-        progressDialog = new ProgressDialog(SignUpActivity.this);
+        progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Logging In");
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(true);
 
 
-        sharedPreferences = getSharedPreferences("Reg", 0);
-        editor = sharedPreferences.edit();
-        isLogin = sharedPreferences.getBoolean("Login", false);
-        if (isLogin) {
-            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-            SignUpActivity.this.finish();
-        }
-
-
-        etSignupName = (EditText) findViewById(R.id.etSignupName);
-        etSignupEmail = (EditText) findViewById(R.id.etSignupEmail);
-        etSignupPassword = (EditText) findViewById(R.id.etSignuppassword);
-        etSIgnupAge = (EditText) findViewById(R.id.etSignupAge);
-        ivSiginUp = (ImageView) findViewById(R.id.ivSignUp);
-        tvLogin = (TextView)findViewById(R.id.tvlogin);
-        tvLogin.setOnClickListener(this);
+        etSignupName = (EditText) v.findViewById(R.id.etSignupName);
+        etSignupEmail = (EditText) v.findViewById(R.id.etSignupEmail);
+        etSignupPassword = (EditText) v.findViewById(R.id.etSignuppassword);
+        etSIgnupAge = (EditText) v.findViewById(R.id.etSignupAge);
+        ivSiginUp = (ImageView) v.findViewById(R.id.ivSignUp);
+        tvLogin = (TextView)v.findViewById(R.id.tvlogin);
         tvLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignUpActivity.this , LoginActivity.class));
+                Fragment fragment = new StudentLoginFragment();
+                getFragmentManager().beginTransaction().
+                        replace(R.id.fragmentContainer, fragment).commit();
             }
         });
-        ivSiginUp.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(android.view.View view) {
-
-        switch (view.getId()) {
-            case R.id.ivSignUp:
+        ivSiginUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 progressDialog.show();
                 final String name = etSignupName.getText().toString();
                 final String email = etSignupEmail.getText().toString();
@@ -90,20 +74,18 @@ public class SignUpActivity extends AppCompatActivity implements android.view.Vi
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(SignUpActivity.this,  "good", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(),  "good", Toast.LENGTH_SHORT).show();
 
                             editor.putString("UserID", task.getResult().getUser().getUid());
                             editor.putString("Provider", "Email");
                             editor.putBoolean("Login", true);
                             editor.commit();
 
-                            SignUpActivity.this.finish();
+                            getActivity().finish();
                             progressDialog.dismiss();
-                            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
-                            Log.d("MyTag", "Done");
                         } else {
                             progressDialog.dismiss();
-                            new AlertDialog.Builder(SignUpActivity.this)
+                            new AlertDialog.Builder(getActivity())
                                     .setTitle("Error")
                                     .setMessage(task.getException().toString())
                                     .setPositiveButton(android.R.string.ok, null)
@@ -113,12 +95,9 @@ public class SignUpActivity extends AppCompatActivity implements android.view.Vi
                         }
                     }
                 });
-
-
-        }
-
+            }
+        });
+        return v ;
     }
 
 }
-
-
