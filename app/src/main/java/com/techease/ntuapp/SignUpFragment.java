@@ -29,9 +29,6 @@ public class SignUpFragment extends Fragment {
     ImageView ivSiginUp;
     private FirebaseAuth mAuth;
     ProgressDialog progressDialog;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    boolean isLogin;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -74,14 +71,8 @@ public class SignUpFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(getActivity(),  "good", Toast.LENGTH_SHORT).show();
 
-                            editor.putString("UserID", task.getResult().getUser().getUid());
-                            editor.putString("Provider", "Email");
-                            editor.putBoolean("Login", true);
-                            editor.commit();
-
-                            getActivity().finish();
+                            Toast.makeText(getActivity(),  "You are signed up ", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                         } else {
                             progressDialog.dismiss();

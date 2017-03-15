@@ -29,9 +29,6 @@ public class StudentLoginFragment extends Fragment {
     ImageView ivSignIn;
     private FirebaseAuth mAuth;
     ProgressDialog progressDialog;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
-    boolean isLogin;
     FirebaseUser user;
 
     @Override
@@ -43,10 +40,6 @@ public class StudentLoginFragment extends Fragment {
         Firebase.setAndroidContext(getActivity());
         mAuth = FirebaseAuth.getInstance();
         user = mAuth.getCurrentUser();
-
-        sharedPreferences = getActivity().getSharedPreferences("Reg", 0);
-        editor = sharedPreferences.edit();
-        isLogin = sharedPreferences.getBoolean("Login", false);
 
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Logging In");
@@ -70,12 +63,7 @@ public class StudentLoginFragment extends Fragment {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
-                                        editor.putString("UserID", task.getResult().getUser().getUid());
-                                        editor.putString("Provider", "Email");
-                                        editor.putBoolean("Login", true);
-                                        editor.commit();
-                                        getActivity().finish();
-                                        //   Toast.makeText(getActivity(), "You are now Logged in", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(getActivity(), "You are now Logged in", Toast.LENGTH_SHORT).show();
                                         progressDialog.dismiss();
 
                                     } else {
